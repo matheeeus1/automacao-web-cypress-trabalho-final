@@ -115,18 +115,6 @@ No GitHub, abrir **Actions → Trabalho final — Cypress → execução → Art
 
 [Pipeline validada e artifacts conferidos](https://github.com/matheeeus1/automacao-web-cypress-trabalho-final/actions/runs/41150162138): 10 aprovados, 0 falhas. [Repositório público](https://github.com/matheeeus1/automacao-web-cypress-trabalho-final).
 
-## Limitações e decisões
-
-- Os documentos originais do professor não foram encontrados; os requisitos transcritos pelo usuário são a fonte acadêmica disponível.
-- Aplicação externa pode sofrer indisponibilidade ou anúncios intersticiais. Não há supressão global de exceções, bloqueio de anúncios, retries de teste, esperas fixas ou cliques forçados.
-- O pagamento mostra a mensagem oficial no submit e navega imediatamente. Um observador passivo verifica texto/visibilidade nesse momento; o teste também exige a confirmação final na página de pedido. Não há bloqueio ou atraso da navegação.
-- TC10 usa endereço fictício; não há operação documentada para remover assinaturas.
-- Hooks não garantem limpeza após interrupção do processo; o registro permite recuperação explícita.
-- Relatórios estão disponíveis nos artifacts da pipeline por 30 dias; evidências locais e dependências não são versionadas.
-- ZIP sem `node_modules` será preparado quando solicitado. Commits e push foram autorizados pelo usuário.
-
-A [tabela final de conformidade](docs/conformidade.md) contém 23 requisitos aprovados, sem pendências impeditivas. A aprovação considera os requisitos transcritos; documentos adicionais do professor podem exigir nova conferência.
-
 ## Fontes
 
 - [Casos funcionais](https://automationexercise.com/test_cases)
