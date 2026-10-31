@@ -6,7 +6,6 @@ describe('Fase 3 — contrato real de contas temporárias', () => {
   let user: TestUser;
   beforeEach(() => { user = createUser('SUPPORT'); });
   afterEach(() => {
-    // Também executa se uma asserção após criação falhar; nunca limpa conta sem registro.
     cy.task<TestUser[]>('accounts:pending', null, { log: false }).then((pending) => {
       if (pending.some((entry) => entry.email === user.email)) return cleanupAccount(user);
     });

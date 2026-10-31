@@ -35,8 +35,6 @@ export function confirmPayment() {
   const expectedMessage = 'Your order has been placed successfully!';
   let observed = { text: '', visible: false };
   cy.document().then((doc) => {
-    // O handler da aplicação remove hide no submit e navega imediatamente.
-    // Observação passiva após o handler do formulário: sem impedir ou atrasar a navegação.
     doc.addEventListener('submit', (event) => {
       if ((event.target as HTMLFormElement).id !== 'payment-form') return;
       const message = doc.querySelector<HTMLElement>('#success_message');

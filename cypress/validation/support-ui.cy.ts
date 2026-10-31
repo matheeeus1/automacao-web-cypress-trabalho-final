@@ -53,7 +53,6 @@ describe('Fase 3 — integração dos módulos de interface', () => {
       cy.location('pathname').should('eq', '/payment');
       cy.fixture<PaymentData>('payment').then((payment) => fillPayment(payment));
       cy.screenshot('phase3-payment-filled', { capture: 'viewport' });
-      // A compra e sua confirmação pertencem aos cenários da Fase 4.
     });
   });
 

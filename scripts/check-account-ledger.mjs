@@ -5,7 +5,6 @@ import { join } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { accountTasks, assertTestEmail } from '../cypress/support/api/account-ledger.ts';
 
-// Verificação local sem rede; nunca acessa o registro de contas reais da execução.
 const temporaryRoot = mkdtempSync(join(tmpdir(), 'tcd-ledger-check-'));
 try {
   const tasks = accountTasks(temporaryRoot);

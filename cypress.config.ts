@@ -2,7 +2,6 @@ import { randomUUID } from 'node:crypto';
 import { defineConfig } from 'cypress';
 import { accountTasks } from './cypress/support/api/account-ledger';
 
-// Cada inicialização preserva suas próprias evidências, sem sobrescrever runs anteriores.
 const runId = process.env.E2E_RUN_ID ?? `${new Date().toISOString().replace(/[:.]/g, '-')}-${randomUUID().slice(0, 8)}`;
 if (!/^[a-zA-Z0-9][a-zA-Z0-9._-]*$/.test(runId)) throw new Error('E2E_RUN_ID inválido');
 const artifacts = `artifacts/${runId}`;

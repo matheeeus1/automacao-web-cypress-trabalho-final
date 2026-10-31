@@ -1,7 +1,6 @@
 import type { CartItem } from '../types/test-data';
 import { parsePrice } from './products';
 
-// O checkout não possui o ID cart_info_table; as linhas identificam a tabela em ambas as telas.
 export const cartTableSelector = 'table:has(tr[id^="product-"])';
 
 export function assertCartItems(items: CartItem[]) {

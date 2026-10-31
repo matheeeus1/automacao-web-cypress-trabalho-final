@@ -17,4 +17,3 @@ assert.equal(report.stats.tests, 10, 'Relatório deve conter os dez testes');
 assert.deepEqual(tests.map((test) => test.title.match(/^TC\d{2}\b/)?.[0]).sort(), expected);
 for (const id of expected) assert(html.includes(id), `${id} ausente no HTML`);
 console.log(`HTML/JSON conferidos: ${tests.length} TCs; ${report.stats.passes} aprovados; ${report.stats.failures} falhas; ${report.stats.pending} pendentes.`);
-// Resultado dos testes continua sendo responsabilidade do comando Cypress; não é neutralizado aqui.

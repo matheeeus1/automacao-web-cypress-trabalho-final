@@ -35,7 +35,6 @@ export function parseApiBody(body: unknown): ApiBody {
 }
 
 function bodyOf(response: Cypress.Response<unknown>): ApiBody {
-  // A aplicação retorna HTTP 200 mesmo para códigos funcionais 201 e 404.
   expect(response.status, 'status HTTP da API').to.eq(200);
   return parseApiBody(response.body);
 }

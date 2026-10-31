@@ -10,17 +10,13 @@ describe('Login válido', () => {
   afterEach(() => cleanupTrackedAccount(user));
 
   it('TC02 — autentica com credenciais válidas e exclui a conta', () => {
-    // Passos 1–3: executor, acesso e home.
     openHome();
-    // Passos 4–5: formulário de login.
     navigateTo('login');
     cy.location('pathname').should('eq', '/login');
     cy.contains('h2', 'Login to your account').should('be.visible');
-    // Passos 6–8: credenciais, envio e identidade autenticada.
     login(user);
     assertLoggedIn(user);
     cy.screenshot('tc02-autenticado');
-    // Passos 9–10: exclusão UI e confirmação.
     deleteAccountViaUi();
     cy.screenshot('tc02-excluido');
     getAccount(user.email).should('eq', null);

@@ -4,7 +4,6 @@ import type { TestUser } from '../types/test-data';
 
 interface RecordEntry { user: TestUser; state: 'tracked' | 'cleaned'; updatedAt: string }
 
-// Somente contas sintéticas deste projeto podem entrar no registro de limpeza.
 export function assertTestEmail(email: string): void {
   if (!/^qa-tcd-(?:tc(?:01|02|03|04|05|08|09|10|15|16)|support)-[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}@example\.com$/.test(email)) {
     throw new Error('Conta não pertence ao namespace descartável do projeto');
@@ -26,7 +25,6 @@ export function accountTasks(projectRoot: string) {
     'accounts:track'(user: TestUser) {
       const path = pathFor(user.email);
       mkdirSync(directory, { recursive: true });
-      // Não sobrescrever identidade anterior: colisões precisam falhar explicitamente.
       writeFileSync(path, JSON.stringify({ user, state: 'tracked', updatedAt: new Date().toISOString() }, null, 2), { flag: 'wx', mode: 0o600 });
       return null;
     },
