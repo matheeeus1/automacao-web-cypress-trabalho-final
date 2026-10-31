@@ -260,3 +260,8 @@ O usuário autorizou commits separados, criação de repositório público, push
 - Artifacts disponíveis até 30/11/2026, conforme metadados do GitHub; baixar novamente após expiração exige uma nova execução.
 
 Fase 5 concluída com evidência local e remota. Fase 6 autorizada pelo avanço automático após sucesso.
+
+
+## Fase 6 — conclusão
+
+Duas rodadas concluídas: suíte local com 10 aprovados e dez specs em ordem inversa com 10 aprovados. Nenhuma falha, pendência ou teste ignorado. Conferência de contas: 38 registros, todos limpos. Comandos, horários, resultados por caso e reprodução estão em [integracao.md](integracao.md).
