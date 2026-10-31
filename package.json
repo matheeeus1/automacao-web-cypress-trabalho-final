@@ -17,7 +17,8 @@
     "validate:ledger": "node scripts/check-account-ledger.mjs",
     "cleanup:accounts": "cypress run --e2e --browser electron --config specPattern=cypress/validation/cleanup-accounts.cy.ts",
     "typecheck": "tsc --noEmit",
-    "check:scope": "node scripts/check-scope.mjs"
+    "check:scope": "node scripts/check-scope.mjs",
+    "check:reports": "node scripts/check-reports.mjs"
   },
   "devDependencies": {
     "@types/node": "24.10.0",

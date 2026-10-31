@@ -15,6 +15,17 @@ export default defineConfig({
   screenshotOnRunFailure: true,
   screenshotsFolder: `${artifacts}/screenshots`,
   videosFolder: `${artifacts}/videos`,
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    reportDir: `${artifacts}/reports`,
+    reportFilename: 'index',
+    reportPageTitle: 'Automação Web — Trabalho Final',
+    charts: true,
+    embeddedScreenshots: true,
+    inlineAssets: true,
+    saveJson: true,
+    ignoreVideos: true,
+  },
   e2e: {
     baseUrl: 'https://automationexercise.com',
     specPattern: 'cypress/e2e/trabalho-final/**/*.cy.ts',
@@ -23,6 +34,7 @@ export default defineConfig({
     testIsolation: true,
     setupNodeEvents(on, config) {
       on('task', accountTasks(config.projectRoot));
+      require('cypress-mochawesome-reporter/plugin')(on);
       return config;
     },
   },

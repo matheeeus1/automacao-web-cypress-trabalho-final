@@ -1,0 +1,53 @@
+name: Trabalho final — Cypress
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  e2e:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      E2E_RUN_ID: ci-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Instalar dependências
+        run: npm ci
+      - name: Verificar Cypress
+        run: npm run cy:verify
+      - name: Verificar TypeScript
+        run: npm run typecheck
+      - name: Executar os dez cenários
+        run: npm run test:final
+      - name: Conferir relatório obrigatório
+        if: always()
+        run: npm run check:reports
+      - name: Publicar relatório HTML e JSON
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: relatorios-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/${{ env.E2E_RUN_ID }}/reports/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Publicar screenshots e vídeos
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: evidencias-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            artifacts/${{ env.E2E_RUN_ID }}/screenshots/
+            artifacts/${{ env.E2E_RUN_ID }}/videos/
+          if-no-files-found: ignore
+          retention-days: 30
