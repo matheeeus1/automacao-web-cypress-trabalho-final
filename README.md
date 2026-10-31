@@ -2,7 +2,7 @@
 
 Testes E2E da aplicação [Automation Exercise](https://automationexercise.com), desenvolvidos com rastreabilidade dos passos oficiais, contas independentes e limpeza controlada.
 
-**Estado: dez cenários aprovados individualmente e na execução completa local com Mochawesome. Fase 5 aguarda publicação/CI real; Fases 6 e 7 ainda pendentes.**
+**Estado: dez cenários aprovados individualmente e na execução completa local com Mochawesome. Fase 5 concluída com pipeline real e download do relatório; Fases 6 e 7 ainda pendentes.**
 
 ## Tecnologias e pré-requisitos
 
@@ -113,7 +113,7 @@ Após a execução, os passos com `if: always()` conferem e publicam relatórios
 
 No GitHub, abrir **Actions → Trabalho final — Cypress → execução → Artifacts**. Baixar `relatorios-<run_id>-<tentativa>`, extrair e abrir `index.html`. Screenshots e vídeos ficam no artifact `evidencias-<run_id>-<tentativa>`. Retenção: 30 dias; guardar evidências relevantes antes de expirarem.
 
-**O workflow ainda não foi executado no GitHub.** Commits e publicação foram autorizados; falta definir o repositório remoto de destino. Validação YAML e testes locais não equivalem a aprovação da pipeline.
+[Pipeline validada e artifacts conferidos](https://github.com/matheeeus1/automacao-web-cypress-trabalho-final/actions/runs/41150162138): 10 aprovados, 0 falhas. [Repositório público](https://github.com/matheeeus1/automacao-web-cypress-trabalho-final).
 
 ## Limitações e decisões
 

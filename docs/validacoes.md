@@ -245,3 +245,18 @@ Limitação de inspeção: a ferramenta de navegador bloqueou a abertura do HTML
 ### Ponto de parada
 
 Parte local da Fase 5 validada. Para concluí-la falta definir o repositório de destino, executar a pipeline real e conferir o download. O usuário autorizou commit/push/publicação e pediu commits separados por etapa. Não há remoto configurado. As Fases 6 e 7 não foram iniciadas automaticamente, pois a Fase 5 ainda não está integralmente concluída.
+
+
+## Fase 5 — conclusão remota
+
+O usuário autorizou commits separados, criação de repositório público, push e execução da pipeline. Foram publicados 15 commits retrospectivos, com descrição por etapa e um commit por cenário. Repositório: https://github.com/matheeeus1/automacao-web-cypress-trabalho-final.
+
+- Commit executado: `15d2fabf51a0e863f6263211fcc0689e525703ad`.
+- [Execução GitHub Actions 41150162138](https://github.com/matheeeus1/automacao-web-cypress-trabalho-final/actions/runs/41150162138): job e2e e todos os passos aprovados.
+- Relatório: artifact `relatorios-41150162138-1`, ID `13022886422`, 19.282.211 bytes.
+- Evidências: artifact `evidencias-41150162138-1`, ID `13022951329`, 31.278.942 bytes.
+- Download do relatório realizado pelo conector e por `gh run download 41150162138 --repo matheeeus1/automacao-web-cypress-trabalho-final --name relatorios-41150162138-1 --dir artifacts/github-41150162138/reports` para inspeção local.
+- `npm run check:reports -- artifacts/github-41150162138/reports`: exit 0; dez IDs, 10 aprovados, 0 falhas, 0 pendentes. HTML e JSON baixados foram abertos para leitura estrutural; permanece a limitação de inspeção visual pelo navegador descrita acima.
+- Artifacts disponíveis até 30/11/2026, conforme metadados do GitHub; baixar novamente após expiração exige uma nova execução.
+
+Fase 5 concluída com evidência local e remota. Fase 6 autorizada pelo avanço automático após sucesso.
