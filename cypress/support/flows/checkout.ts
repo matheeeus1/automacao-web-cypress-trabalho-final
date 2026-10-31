@@ -30,3 +30,25 @@ export function fillPayment(payment: PaymentData) {
     cy.get(`input[name="${name}"]`).should('be.visible').type(value).should('have.value', value);
   });
 }
+
+export function confirmPayment() {
+  const expectedMessage = 'Your order has been placed successfully!';
+  let observed = { text: '', visible: false };
+  cy.document().then((doc) => {
+    // O handler da aplicação remove hide no submit e navega imediatamente.
+    // Observação passiva após o handler do formulário: sem impedir ou atrasar a navegação.
+    doc.addEventListener('submit', (event) => {
+      if ((event.target as HTMLFormElement).id !== 'payment-form') return;
+      const message = doc.querySelector<HTMLElement>('#success_message');
+      observed = { text: message?.textContent?.trim() ?? '',
+        visible: message !== null && Cypress.dom.isVisible(message) };
+    }, { once: true });
+  });
+  cy.get('[data-qa="pay-button"]').click();
+  cy.then(() => {
+    expect(observed.text, 'mensagem oficial no submit').to.eq(expectedMessage);
+    expect(observed.visible, 'mensagem oficial visível antes da navegação').to.eq(true);
+  });
+  cy.location('pathname').should('match', /^\/payment_done\/\d+$/);
+  return cy.contains('Congratulations! Your order has been confirmed!').should('be.visible');
+}
