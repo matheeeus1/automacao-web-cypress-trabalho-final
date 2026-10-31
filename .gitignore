@@ -1,0 +1,14 @@
+node_modules/
+artifacts/
+cypress/screenshots/
+cypress/videos/
+cypress/reports/
+cypress/.tmp/
+.env
+.env.*
+!.env.example
+cypress.env.json
+*.tsbuildinfo
+npm-debug.log*
+.DS_Store
+*.zip

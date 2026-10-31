@@ -1,0 +1,25 @@
+{
+  "name": "automacao-web-cypress-trabalho-final",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Trabalho de conclusão de disciplina: automação web com Cypress no Automation Exercise",
+  "engines": {
+    "node": "24.x",
+    "npm": "11.x"
+  },
+  "packageManager": "npm@11.16.0",
+  "scripts": {
+    "cy:open": "cypress open --e2e",
+    "cy:verify": "cypress verify",
+    "test:final": "npm run check:scope && cypress run --e2e --browser electron",
+    "test:spec": "cypress run --e2e --browser electron",
+    "typecheck": "tsc --noEmit",
+    "check:scope": "node scripts/check-scope.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.0",
+    "cypress": "15.19.0",
+    "cypress-mochawesome-reporter": "5.0.0",
+    "typescript": "5.9.3"
+  }
+}
