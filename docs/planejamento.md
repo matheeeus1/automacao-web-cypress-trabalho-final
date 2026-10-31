@@ -28,4 +28,4 @@ Seletores próprios para testes quando disponíveis, sincronização por condiç
 
 Relatórios, screenshots, vídeos e logs ficam em artifacts, ignorados pelo Git. Contas sintéticas têm identidade exclusiva e registro recuperável; interrupções podem impedir hooks. Assinatura não possui remoção documentada. Falhas da aplicação externa devem permanecer visíveis.
 
-O usuário autorizou avanço automático após sucesso de cada etapa e, posteriormente, commits separados, push e execução da pipeline. A publicação ainda depende de um destino definido. Nenhuma pipeline poderá ser aprovada sem execução real e conferência dos artifacts.
+O usuário autorizou avanço automático após sucesso de cada etapa e, posteriormente, commits separados, push e execução da pipeline. O destino posteriormente definido e publicado foi https://github.com/matheeeus1/automacao-web-cypress-trabalho-final. Nenhuma pipeline poderá ser aprovada sem execução real e conferência dos artifacts.

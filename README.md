@@ -2,7 +2,7 @@
 
 Testes E2E da aplicação [Automation Exercise](https://automationexercise.com), desenvolvidos com rastreabilidade dos passos oficiais, contas independentes e limpeza controlada.
 
-**Estado: dez cenários aprovados individualmente e na execução completa local com Mochawesome. Fase 5 concluída com pipeline real e download do relatório; Fases 6 e 7 ainda pendentes.**
+**Estado: PROJETO APTO PARA ENTREGA no escopo transcrito. Dez cenários e 113 passos revisados, suíte completa e ordem inversa aprovadas, pipeline real e download dos artifacts comprovados.**
 
 ## Tecnologias e pré-requisitos
 
@@ -63,7 +63,7 @@ Use um identificador novo a cada execução. Sem `E2E_RUN_ID`, o projeto gera da
 
 ## Casos automatizados
 
-Todos abaixo passaram individualmente. Integração e execução remota têm evidências e estados próprios.
+Todos abaixo passaram individualmente, na suíte completa, em ordem inversa e no GitHub. Veja os [resultados por caso](docs/integracao.md) e a [auditoria final](docs/auditoria.md).
 
 | ID | Comportamento |
 |---|---|
@@ -122,10 +122,10 @@ No GitHub, abrir **Actions → Trabalho final — Cypress → execução → Art
 - O pagamento mostra a mensagem oficial no submit e navega imediatamente. Um observador passivo verifica texto/visibilidade nesse momento; o teste também exige a confirmação final na página de pedido. Não há bloqueio ou atraso da navegação.
 - TC10 usa endereço fictício; não há operação documentada para remover assinaturas.
 - Hooks não garantem limpeza após interrupção do processo; o registro permite recuperação explícita.
-- O reporter e as evidências são locais até a publicação autorizada. Artifacts e dependências não devem ser versionados.
+- Relatórios estão disponíveis nos artifacts da pipeline por 30 dias; evidências locais e dependências não são versionadas.
 - ZIP sem `node_modules` será preparado quando solicitado. Commits e push foram autorizados pelo usuário.
 
-O projeto não está declarado apto para entrega enquanto CI real, integração e auditoria final estiverem pendentes.
+A [tabela final de conformidade](docs/conformidade.md) contém 23 requisitos aprovados, sem pendências impeditivas. A aprovação considera os requisitos transcritos; documentos adicionais do professor podem exigir nova conferência.
 
 ## Fontes
 

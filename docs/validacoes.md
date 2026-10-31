@@ -1,5 +1,6 @@
 # Validações executadas
 
+**Registro histórico:** os estados de pendência nas seções anteriores refletem cada etapa naquele momento. Estado final: [23 requisitos aprovados](conformidade.md), [integração concluída](integracao.md) e [auditoria final](auditoria.md). Links sob artifacts referem-se ao workspace local e não fazem parte do Git; para evidências compartilhadas use a execução GitHub indicada na conclusão da Fase 5.
 ## Fase 2 — estrutura e configuração
 
 Data: 30/10/2026, fuso America/Sao_Paulo. Execução básica iniciada aproximadamente às 19:20 locais.
@@ -265,3 +266,7 @@ Fase 5 concluída com evidência local e remota. Fase 6 autorizada pelo avanço 
 ## Fase 6 — conclusão
 
 Duas rodadas concluídas: suíte local com 10 aprovados e dez specs em ordem inversa com 10 aprovados. Nenhuma falha, pendência ou teste ignorado. Conferência de contas: 38 registros, todos limpos. Comandos, horários, resultados por caso e reprodução estão em [integracao.md](integracao.md).
+
+## Fase 7 — conclusão
+
+Revisão integral concluída em 31/10/2026: dez specs, 113 passos, módulos, API, isolamento, limpeza, scripts, configuração, reporter, pipeline real, artifacts e documentação. TypeScript, escopo, registro e relatórios aprovados. Documentação corrigida para estado final e evidências remotas. Resultado: 23 aprovados, 0 pendentes, 0 reprovados, 0 bloqueados. Detalhes em [auditoria.md](auditoria.md).
