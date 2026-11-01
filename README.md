@@ -2,8 +2,6 @@
 
 Testes E2E da aplicação [Automation Exercise](https://automationexercise.com), desenvolvidos com rastreabilidade dos passos oficiais, contas independentes e limpeza controlada.
 
-**Estado: PROJETO APTO PARA ENTREGA no escopo transcrito. Dez cenários e 113 passos revisados, suíte completa e ordem inversa aprovadas, pipeline real e download dos artifacts comprovados.**
-
 ## Tecnologias e pré-requisitos
 
 - Node.js 24.18.1 (`.nvmrc`) e npm 11.x.
